@@ -87,7 +87,7 @@
 <!-- ROADMAP -->
 ## Roadmap
 
-- [] Web site header
+- [ ] Web site header
 - [ ] Multi-language Support
     - [ ] English
     - [ ] Italian
