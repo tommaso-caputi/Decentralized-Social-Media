@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background-color: black;
+}
+
+.header {
+    width: auto;
+    height: max-content;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #d9ed92;
+    padding: 10px;
+    display: flex;
+}
+
+.container {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    gap: 20px;
+}
+
+.searchBar {
+    width: max-content;
+    height: max-content;
+    display: inline-block;
+}
+
+.searchBar {
+    display: inline-flex;
+    width: auto;
+    height: auto;
+}
+
+.input {
+    width: auto;
+    height: max-content;
+    font-size: larger;
+    border: 1px solid white;
+    border-radius: 12px;
+    background-color: transparent;
+    color: white;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.searchBtn {
+    height: 36px;
+    width: max-content;
+    font-size: larger;
+    border: 1px solid white;
+    border-radius: 12px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.iconAccount {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+
+.post {
+    width: 30%;
+    height: 40%;
+    border: 1px solid white;
+    padding: 10px;
+    padding-top: 0;
+}
+
+.postHeader {
+    width: 100%;
+    height: max-content;
+    display: inline-flex;
+    padding: 5px;
+}
+
+.postAccountName {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    margin: auto;
+    margin-left: 2%;
+    cursor: default;
+}
+
+.postImages {
+    width: auto;
+    height: max-content;
+    background-color: #d9ed92;
+    padding: 5px;
+    align-items: center;
+}
+
+.img {
+    width: 100%;
+    margin: auto;
+}
+
+.postInteractions {
+    display: inline-flex;
+    width: 100%;
+    height: max-content;
+    gap: none;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.iconPost {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+}
+
+.postLikeNumber {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    margin: auto;
+    margin-left: 2%;
+    cursor: none;
+}
+
+.postDescription {
+    width: auto;
+    height: max-content;
+    background-color: #d9ed92;
+    padding: 5px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    cursor: default;
+}
+
+.postInfo {
+    margin-top: 2%;
+    width: auto;
+    height: max-content;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    cursor: none;
+}
+
+.welcome {
+    width: 30%;
+    height: max-content;
+    color: black;
+    background-color: #d9ed92;
+    border: 1px solid white;
+    padding: 2%;
+    cursor: default;
+}
+
+.titleWelcome {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 80px;
+}
+
+.subtitleWelcome {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+    font-weight: 500;
+    display: inline-flex;
+}
+
+.welcomeBtn {
+    width: auto;
+    height: auto;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.welcomeImg {
+    width: 50px;
+    height: 50px;
+}
