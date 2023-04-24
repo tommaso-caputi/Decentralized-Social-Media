@@ -11,25 +11,31 @@ body {
     border-bottom: 1px solid #d9ed92;
     padding: 10px;
     display: flex;
+    gap: auto;
+    align-items: center;
 }
 
 .container {
+    grid-template-columns: auto auto auto;
     width: 100%;
     height: max-content;
-    display: flex;
-    gap: 20px;
+    display: grid;
+    column-gap: 20px;
+    row-gap: 20px;
 }
 
-.searchBar {
-    width: max-content;
-    height: max-content;
-    display: inline-block;
+.logo {
+    font-size: 36px;
+    font-family: 'Poppins', sans-serif;
+    color: #d9ed92;
 }
 
 .searchBar {
     display: inline-flex;
     width: auto;
     height: auto;
+    margin: auto;
+    margin-right: 20px;
 }
 
 .input {
@@ -60,12 +66,13 @@ body {
     height: 36px;
     cursor: pointer;
     margin-left: 10px;
+    margin: auto;
 }
 
 
 .post {
-    width: 30%;
-    height: 40%;
+    width: auto;
+    height: auto;
     border: 1px solid white;
     padding: 10px;
     padding-top: 0;
@@ -143,7 +150,7 @@ body {
 }
 
 .welcome {
-    width: 33%;
+    width: auto;
     height: max-content;
     color: black;
     background-color: #d9ed92;
@@ -179,4 +186,109 @@ body {
 .welcomeImg {
     width: 50px;
     height: 50px;
+}
+
+.accountbox {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    width: auto;
+    height: auto;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid white;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.accountbox::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    backdrop-filter: blur(5px);
+    border: 1px solid black;
+    border-radius: 12px;
+}
+
+.blur {
+    filter: blur(5px);
+}
+
+.accountTop {
+    display: flex;
+    align-items: center;
+    gap: auto;
+}
+
+.accountImg {
+    width: 100px;
+    height: auto;
+    margin: auto;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.accountName {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 24px;
+    margin: auto;
+    margin-left: 10px;
+}
+
+.accountMiddle {
+    width: 100%;
+    height: max-content;
+    display: block;
+}
+
+.accountInfo {
+    width: 96%;
+    height: max-content;
+    font-size: larger;
+    border: 1px solid white;
+    border-radius: 12px;
+    background-color: transparent;
+    color: white;
+    padding: 2%;
+    margin: auto;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.accountMessage {
+    font-family: 'Poppins', sans-serif;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+}
+
+.accountModify {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.modifyBtn {
+    background-color: transparent;
+    border: none;
+    float: right;
+    height: 36px;
+    width: max-content;
+    font-size: larger;
+    color: white;
+    cursor: pointer;
+    margin-right: 0;
+    padding: 5px;
+}
+
+.modifyBtnImg{
+    width: 24px;
+    height:auto;
 }

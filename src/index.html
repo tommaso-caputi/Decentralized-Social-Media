@@ -8,22 +8,52 @@
     <link rel="stylesheet" href="css/style.css">
     <title>DSM</title>
     <script src="js/main.js"></script>
+    <script src="js/graphic.js"></script>
 </head>
 
 <body>
     <div class="header">
+
+        <div class="logo">
+            <span> DSM </span>
+        </div>
+
         <div class="searchBar">
             <input type="search" id="" class="input" placeholder="Cerca qui">
             <button id="search" class="searchBtn">cerca</button>
         </div>
         <div class="account">
             <span class="postAccountImg">
-                <img src="assets/icons/user.png" alt="account icon" class="iconAccount">
+                <img src="assets/icons/user.png" onclick="showAccountBox()" id="account-img" alt="account icon"
+                    class="iconAccount">
             </span>
         </div>
     </div>
 
-    <div class="container">
+    <div id="accountbox" class="accountbox">
+        <div class="accountTop">
+            <img src="assets/icons/user.png" alt="account icon" class="accountImg">
+            <span class="accountName">
+                nome account
+            </span>
+        </div>
+        <div class="accountMiddle">
+            <input type="text" id="nickname" class="accountInfo" placeholder="account name">
+            <input type="text" id="name" class="accountInfo" placeholder="name">
+            <input type="text" id="surname" class="accountInfo" placeholder="surname">
+        </div>
+
+        <span class="accountMessage">
+            modifica le tue informazioni e poi clicca sul bottone per la modifica
+        </span>
+        <div class="accountModify">
+            <button id="search" class="modifyBtn">
+                <img src="assets/icons/modify.png" alt="modify" class="modifyBtnImg">
+            </button>
+        </div>
+    </div>
+
+    <div id="container" class="container">
 
         <div class="welcome">
             <div class="titleWelcome">
@@ -35,7 +65,8 @@
             <div class="subtitleWelcome">
                 inizia a pubblicare
                 <button class="welcomeBtn">
-                    <img src="assets/icons/right-arrow.png" alt="go button" class="welcomeImg">
+                    <img src="assets/icons/right-arrow.png" onclick="showAccountBox()" alt="go button"
+                        class="welcomeImg">
                 </button>
             </div>
         </div>
