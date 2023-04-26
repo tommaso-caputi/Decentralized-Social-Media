@@ -28,7 +28,6 @@ window.onload = async () => {
 
     //set account data
     account_data = await contract.getAccount(accounts[0]);
-    console.log(account_data);
     document.getElementById('account-name').innerHTML = account_data[0];
     document.getElementById('nickname').setAttribute('placeholder', account_data[0])
     document.getElementById('name').setAttribute('placeholder', account_data[4])
