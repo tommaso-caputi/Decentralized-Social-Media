@@ -41,30 +41,31 @@ window.onload = async () => {
     //show posts
     const n_posts = await contract.getPostsNumber();
     const posts = await contract.getLastNPosts(Number(n_posts._hex));
-    console.log(posts);
 
     for (let i = 0; i < posts.length; i++) {
         var post_creator = await contract.getAccount(posts[i].creator);
-        if (post_creator[3] != '.') {
-            //creator with image
-            if (posts[i]._imgIpfs == '.') {
-                //post without image ip
-                var post_html = '<div class="post"> <div class="postHeader"> <span class="postAccountImg"> <img src="' + post_creator[3] + '" alt="account icon" class="iconPost"> </span> <span class="postAccountName"> ' + post_creator[0] + ' </span> </div> <div class="postInteractions"> <span class="postLike"> <img src="assets/icons/likeEmp.png" alt="like icon" class="iconPost"> </span> <span class="postLikeNumber"> ' + Number(posts[i].likes._hex) + ' </span> <span class="postShare"> <img src="assets/icons/share.png" alt="share icon" class="iconPost"> </span> </div> <div class="postDescription"> ' + posts[i].description + ' </div> <div class="postInfo"> <span> 01-01-2023</span> </div> </div>';
-            } else {
-                //post with image
-                var post_html = '<div class="post"> <div class="postHeader"> <span class="postAccountImg"> <img src="' + post_creator[3] + '" alt="account icon" class="iconPost"> </span> <span class="postAccountName"> ' + posts[i].creator + ' </span> </div><div class="postImages"> <img src="' + posts[i]._imgIpfs + '" alt="Immagine post" class="img"> </div> <div class="postInteractions"> <span class="postLike"> <img src="assets/icons/likeEmp.png" alt="like icon" class="iconPost"> </span> <span class="postLikeNumber"> ' + Number(posts[i].likes._hex) + ' </span> <span class="postShare"> <img src="assets/icons/share.png" alt="share icon" class="iconPost"> </span> </div> <div class="postDescription"> ' + posts[i].description + ' </div> <div class="postInfo"> <span> 01-01-2023</span> </div> </div>';
-            }
-        } else {
-            //creator withot image
-            if (posts[i]._imgIpfs == '.') {
-                //post without image ip
-                var post_html = '<div class="post"> <div class="postHeader"> <span class="postAccountImg"> <img src="assets/icons/user.png" alt="account icon" class="iconPost"> </span> <span class="postAccountName"> ' + post_creator[0] + ' </span> </div> <div class="postInteractions"> <span class="postLike"> <img src="assets/icons/likeEmp.png" alt="like icon" class="iconPost"> </span> <span class="postLikeNumber"> ' + Number(posts[i].likes._hex) + ' </span> <span class="postShare"> <img src="assets/icons/share.png" alt="share icon" class="iconPost"> </span> </div> <div class="postDescription"> ' + posts[i].description + ' </div> <div class="postInfo"> <span> 01-01-2023</span> </div> </div>';
-            } else {
-                //post with image
-                var post_html = '<div class="post"> <div class="postHeader"> <span class="postAccountImg"> <img src="assets/icons/user.png" alt="account icon" class="iconPost"> </span> <span class="postAccountName"> ' + posts[i].creator + ' </span> </div><div class="postImages"> <img src="' + posts[i]._imgIpfs + '" alt="Immagine post" class="img"> </div> <div class="postInteractions"> <span class="postLike"> <img src="assets/icons/likeEmp.png" alt="like icon" class="iconPost"> </span> <span class="postLikeNumber"> ' + Number(posts[i].likes._hex) + ' </span> <span class="postShare"> <img src="assets/icons/share.png" alt="share icon" class="iconPost"> </span> </div> <div class="postDescription"> ' + posts[i].description + ' </div> <div class="postInfo"> <span> 01-01-2023</span> </div> </div>';
-            }
-        }
-        document.getElementById('container').innerHTML += post_html;
+        const post_html = document.createElement('div');
+        post_html.className = 'post';
+        //post header 
+        const post_header = document.createElement('div');
+        post_header.className = 'postHeader';
+        if (post_creator[3] != '.') { post_header.innerHTML += '<span class="postAccountImg"><img src="' + post_creator[3] + '" alt="account icon" class="iconPost"></span>' } else { post_header.innerHTML += '<span class="postAccountImg"><img src="assets/icons/user.png" alt="account icon" class="iconPost"></span>' }
+        post_header.innerHTML += '<span class="postAccountName">' + post_creator[0] + '</span>';
+        post_html.appendChild(post_header);
+        //post image
+        if (posts[i]._imgIpfs != '.') { post_html.innerHTML += '<div class="postImages"><img src="' + posts[i]._imgIpfs + '" alt="Immagine post" class="img"></div>' }
+        //post interaction 
+        const post_interaction = document.createElement('div');
+        post_interaction.className = 'postInteractions';
+        post_interaction.innerHTML += '<span class="postLike"><img src="assets/icons/likeEmp.png" alt="like icon" class="iconPost"></span>';
+        post_interaction.innerHTML += '<span class="postLikeNumber">' + Number(posts[i].likes._hex) + '</span>';
+        post_interaction.innerHTML += '<span class="postShare"><img src="assets/icons/share.png" alt="share icon" class="iconPost"></span>';
+        post_html.appendChild(post_interaction);
+        //post description 
+        post_html.innerHTML += '<div class="postDescription">' + posts[i].description + '</div>';
+        //post create date
+        post_html.innerHTML += '<div class="postInfo"><span> 01-01-2023</span></div>';
+        document.getElementById('container').appendChild(post_html);
     }
 
 };
