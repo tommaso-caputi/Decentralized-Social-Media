@@ -68,9 +68,10 @@ contract DSMContract {
 
     //functions for posts
 
-    function createPost(string memory description, string memory _imgIpfs)
-        public
-    {
+    function createPost(
+        string memory description,
+        string memory _imgIpfs
+    ) public {
         address[] memory temp = new address[](0);
         posts.push(
             post(description, _imgIpfs, temp, block.timestamp, msg.sender)
@@ -104,13 +105,13 @@ contract DSMContract {
     }
 
     function addLike(uint256 n) public {
-        bool  check = true;
+        bool check = true;
         for (uint256 i = 0; i < posts[n].likes.length; i++) {
-            if (posts[n].likes[i]==msg.sender) {
+            if (posts[n].likes[i] == msg.sender) {
                 check = false;
             }
         }
-        if (check){
+        if (check) {
             posts[n].likes.push(msg.sender);
         }
     }
