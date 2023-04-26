@@ -49,7 +49,6 @@ contract DSMContract {
 
     function updateAccount(
         string memory _nickname,
-        uint256 _creationDate,
         string memory _bio,
         string memory _imgIpfs,
         string memory _name,
@@ -57,7 +56,7 @@ contract DSMContract {
     ) public {
         accounts[msg.sender] = account(
             _nickname,
-            _creationDate,
+            block.timestamp,
             _bio,
             _imgIpfs,
             _name,
