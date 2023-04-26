@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+    --card_width: 500px;
+    --row_increment: auto;
+    --card_border_radius: 16px;
+}
+
 body {
     background-color: black;
 }
@@ -16,12 +22,13 @@ body {
 }
 
 .container {
-    grid-template-columns: auto auto auto;
+    margin: 0;
+    padding: 0;
     width: 100%;
-    height: max-content;
     display: grid;
-    column-gap: 20px;
-    row-gap: 20px;
+    grid-template-columns: repeat(auto-fit, var(--card_width));
+    grid-auto-rows: var(--row_increment);
+    justify-content: center;
 }
 
 .logo {
@@ -71,11 +78,11 @@ body {
 
 
 .post {
-    width: auto;
-    height: auto;
     border: 1px solid white;
+    margin: 15px 10px;
+    box-sizing: border-box;
+    height: max-content;
     padding: 10px;
-    padding-top: 0;
 }
 
 .postHeader {
@@ -150,20 +157,22 @@ body {
 }
 
 .welcome {
-    width: auto;
-    height: max-content;
     color: black;
     background-color: #d9ed92;
-    border: 1px solid white;
-    padding: 2%;
+    padding: 10px;
     cursor: default;
+    border: 1px solid white;
+    margin: 15px 10px;
+    box-sizing: border-box;
+    height: max-content;
+    padding: 10px;
 }
 
 .titleWelcome {
     color: black;
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
-    font-size: 80px;
+    font-size: 70px;
 }
 
 .subtitleWelcome {
@@ -198,24 +207,10 @@ body {
     width: auto;
     height: auto;
     background-color: rgb(0, 0, 0);
-    border: 1px solid white;
-    border-radius: 12px;
     padding: 20px;
+    border: 1px solid #d9ed92;
 }
 
-.accountbox::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-    backdrop-filter: blur(5px);
-    border: 1px solid black;
-    border-radius: 12px;
-}
 
 .blur {
     filter: blur(5px);
@@ -288,7 +283,7 @@ body {
     padding: 5px;
 }
 
-.modifyBtnImg{
+.modifyBtnImg {
     width: 24px;
-    height:auto;
+    height: auto;
 }
