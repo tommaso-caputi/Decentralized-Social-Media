@@ -53,16 +53,29 @@ window.onload = async () => {
         post_header.innerHTML += '<span class="postAccountName">' + post_creator[0] + '</span>';
         post_html.appendChild(post_header);
         //post image
-        if (posts[i]._imgIpfs != '.') { post_html.innerHTML += '<div class="postImages"><img src="' + posts[i]._imgIpfs + '" alt="Immagine post" class="img"></div>' }
-        //post interaction 
-        const post_interaction = document.createElement('div');
-        post_interaction.className = 'postInteractions';
-        post_interaction.innerHTML += '<span class="postLike"><img src="assets/icons/likeEmp.png" alt="like icon" class="iconPost"></span>';
-        post_interaction.innerHTML += '<span class="postLikeNumber">' + Number(posts[i].likes._hex) + '</span>';
-        post_interaction.innerHTML += '<span class="postShare"><img src="assets/icons/share.png" alt="share icon" class="iconPost"></span>';
-        post_html.appendChild(post_interaction);
-        //post description 
-        post_html.innerHTML += '<div class="postDescription">' + posts[i].description + '</div>';
+        if (posts[i]._imgIpfs != '.') {
+            post_html.innerHTML += '<div class="postImages"><img src="' + posts[i]._imgIpfs + '" alt="Immagine post" class="img"></div>';
+            //post interaction 
+            const post_interaction = document.createElement('div');
+            post_interaction.className = 'postInteractions';
+            post_interaction.innerHTML += '<span class="postLike"><img src="assets/icons/likeEmp.png" alt="like icon" class="iconPost"></span>';
+            post_interaction.innerHTML += '<span class="postLikeNumber">' + Number(posts[i].likes._hex) + '</span>';
+            post_interaction.innerHTML += '<span class="postShare"><img src="assets/icons/share.png" alt="share icon" class="iconPost"></span>';
+            post_html.appendChild(post_interaction);
+            //post description 
+            post_html.innerHTML += '<div class="postDescription">' + posts[i].description + '</div>';
+        } else {
+            //post description 
+            post_html.innerHTML += '<div class="postDescription">' + posts[i].description + '</div>';
+            //post interaction 
+            const post_interaction = document.createElement('div');
+            post_interaction.className = 'postInteractions';
+            post_interaction.innerHTML += '<span class="postLike"><img src="assets/icons/likeEmp.png" alt="like icon" class="iconPost"></span>';
+            post_interaction.innerHTML += '<span class="postLikeNumber">' + Number(posts[i].likes._hex) + '</span>';
+            post_interaction.innerHTML += '<span class="postShare"><img src="assets/icons/share.png" alt="share icon" class="iconPost"></span>';
+            post_html.appendChild(post_interaction);
+        }
+
         //post create date
         post_html.innerHTML += '<div class="postInfo"><span> 01-01-2023</span></div>';
         document.getElementById('container').appendChild(post_html);
