@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>DSM</title>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
     <script src="js/main.js"></script>
     <script src="js/graphic.js"></script>
 </head>
@@ -24,7 +25,7 @@
         </div>
         <div class="account">
             <span class="postAccountImg">
-                <img src="assets/icons/user.png" onclick="showAccountBox()" id="account-img" alt="account icon"
+                <img src="assets/icons/user.png" onclick="showAccountBox()" id="account-img1" alt="account icon"
                     class="iconAccount">
             </span>
         </div>
@@ -32,8 +33,8 @@
 
     <div id="accountbox" class="accountbox">
         <div class="accountTop">
-            <img src="assets/icons/user.png" alt="account icon" class="accountImg">
-            <span class="accountName">
+            <img src="assets/icons/user.png" alt="account icon" class="accountImg" id="account-img2">
+            <span class="accountName" id="account-name">
                 nome account
             </span>
         </div>
@@ -41,6 +42,7 @@
             <input type="text" id="nickname" class="accountInfo" placeholder="account name">
             <input type="text" id="name" class="accountInfo" placeholder="name">
             <input type="text" id="surname" class="accountInfo" placeholder="surname">
+            <input type="text" id="bio" class="accountInfo" placeholder="surname">
         </div>
 
         <span class="accountMessage">
@@ -71,7 +73,7 @@
             </div>
         </div>
 
-        <div class="post">
+        <!-- <div class="post">
             <div class="postHeader">
                 <span class="postAccountImg">
                     <img src="assets/icons/user.png" alt="account icon" class="iconPost">
@@ -101,6 +103,34 @@
                 <span> 01-01-2023</span>
             </div>
         </div>
+
+        <div class="post">
+            <div class="postHeader">
+                <span class="postAccountImg">
+                    <img src="assets/icons/user.png" alt="account icon" class="iconPost">
+                </span>
+                <span class="postAccountName">
+                    nome account
+                </span>
+            </div>
+            <div class="postDescription">
+                descrizione post
+            </div>
+            <div class="postInteractions">
+                <span class="postLike">
+                    <img src="assets/icons/likeEmp.png" alt="like icon" class="iconPost">
+                </span>
+                <span class="postLikeNumber">
+                    70
+                </span>
+                <span class="postShare">
+                    <img src="assets/icons/share.png" alt="share icon" class="iconPost">
+                </span>
+            </div>
+            <div class="postInfo">
+                <span> 01-01-2023</span>
+            </div>
+        </div> -->
 
     </div>
 
