@@ -28,6 +28,7 @@ window.onload = async () => {
 
     //set account data
     account_data = await contract.getAccount(accounts[0]);
+    console.log(account_data);
     document.getElementById('account-name').innerHTML = account_data[0];
     document.getElementById('nickname').setAttribute('placeholder', account_data[0])
     document.getElementById('name').setAttribute('placeholder', account_data[4])
@@ -58,7 +59,7 @@ window.onload = async () => {
             //post interaction 
             const post_interaction = document.createElement('div');
             post_interaction.className = 'postInteractions';
-            post_interaction.innerHTML += '<span class="postLike"><img src="assets/icons/likeEmp.png" alt="like icon" class="iconPost"></span>';
+            post_interaction.innerHTML += '<span class="postL   ike"><img src="assets/icons/likeEmp.png" alt="like icon" class="iconPost"></span>';
             post_interaction.innerHTML += '<span class="postLikeNumber">' + Number(posts[i].likes._hex) + '</span>';
             post_interaction.innerHTML += '<span class="postShare"><img src="assets/icons/share.png" alt="share icon" class="iconPost"></span>';
             post_html.appendChild(post_interaction);
@@ -75,10 +76,16 @@ window.onload = async () => {
             post_interaction.innerHTML += '<span class="postShare"><img src="assets/icons/share.png" alt="share icon" class="iconPost"></span>';
             post_html.appendChild(post_interaction);
         }
-
         //post create date
-        post_html.innerHTML += '<div class="postInfo"><span> 01-01-2023</span></div>';
+        post_html.innerHTML += '<div class="postInfo"><span>' + decodeDate(posts[i].creationDate) + '</span></div>';
+        //add post to list
         document.getElementById('container').appendChild(post_html);
     }
 
 };
+
+
+function decodeDate(n) {
+    let temp = new Date(n * 1000);
+    return temp.toLocaleDateString();
+}

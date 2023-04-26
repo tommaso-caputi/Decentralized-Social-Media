@@ -14,7 +14,8 @@ contract DSMContract {
     struct post {
         string description;
         string _imgIpfs;
-        uint256 likes;
+        address[] likes;
+        uint256 creationDate;
         address creator;
     }
 
@@ -71,7 +72,10 @@ contract DSMContract {
     function createPost(string memory description, string memory _imgIpfs)
         public
     {
-        posts.push(post(description, _imgIpfs, 0, msg.sender));
+        address[] memory temp = new address[](0);
+        posts.push(
+            post(description, _imgIpfs, temp, block.timestamp, msg.sender)
+        );
     }
 
     function getPostsNumber() public view returns (uint256) {
@@ -98,6 +102,18 @@ contract DSMContract {
             }
         }
         return temp;
+    }
+
+    function addLike(uint256 n) public {
+        bool  check = true;
+        for (uint256 i = 0; i < posts[n].likes.length; i++) {
+            if (posts[n].likes[i]==msg.sender) {
+                check = false;
+            }
+        }
+        if (check){
+            posts[n].likes.push(msg.sender);
+        }
     }
 
     //---------------------------------------------------------------------------------------------------
