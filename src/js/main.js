@@ -37,17 +37,19 @@ window.onload = async () => {
 
 
     //set account data
-    document.getElementById('account-name').innerHTML = account_data[0];
-    document.getElementById('nickname').setAttribute('placeholder', account_data[0])
-    document.getElementById('name').setAttribute('placeholder', account_data[4])
-    document.getElementById('surname').setAttribute('placeholder', account_data[5])
-    document.getElementById('bio').setAttribute('placeholder', account_data[2])
-    if (account_data[3] != '.' && account_data[3] != '') {
-        document.getElementById('account-img1').setAttribute('src', account_data[3])
-        document.getElementById('account-img2').setAttribute('src', account_data[3])
-    } else {
-        document.getElementById('account-img1').setAttribute('src', 'assets/icons/user.png')
-        document.getElementById('account-img2').setAttribute('src', 'assets/icons/user.png')
+    if (account_data[0] != '') {
+        document.getElementById('account-name').innerHTML = account_data[0];
+        document.getElementById('nickname').setAttribute('placeholder', account_data[0])
+        document.getElementById('name').setAttribute('placeholder', account_data[4])
+        document.getElementById('surname').setAttribute('placeholder', account_data[5])
+        document.getElementById('bio').setAttribute('placeholder', account_data[2])
+        if (account_data[3] != '.' && account_data[3] != '') {
+            document.getElementById('account-img1').setAttribute('src', account_data[3])
+            document.getElementById('account-img2').setAttribute('src', account_data[3])
+        } else {
+            document.getElementById('account-img1').setAttribute('src', 'assets/icons/user.png')
+            document.getElementById('account-img2').setAttribute('src', 'assets/icons/user.png')
+        }
     }
 
     //show posts
