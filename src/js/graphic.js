@@ -34,7 +34,8 @@ function closeBox() {
 window.addEventListener('mouseup',function(event){
     var box = document.getElementById('accountbox');
     var container = document.getElementById("container");
-    if(event.target != box && event.target.parentNode != box){
+
+    if(event.target == (container)){
         box.style.display = 'none';
         container.classList.remove("blur");
         open = true;
