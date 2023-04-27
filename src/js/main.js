@@ -110,9 +110,11 @@ const updateAccountORRegistation = async () => {
             document.getElementById('name').value,
             document.getElementById('surname').value
         ))
+        alert('Successfully registrated')
     } else {
         //update
         console.log('update')
+        alert('update deactivated')
     }
 }
 
