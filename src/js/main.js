@@ -26,16 +26,28 @@ window.onload = async () => {
     const contractAddress = "0x3AA8619E4E2d3329E82d491499dCF8D176dc4F8f";
     window.contract = new ethers.Contract(contractAddress, abi, signer);
 
-    //set account data
+    //controllo registrazione
     account_data = await contract.getAccount(accounts[0]);
+    console.log(account_data)
+    if (account_data[0] == '') {
+        console.log('account non esistente');
+    } else {
+        document.getElementById('welcome').style.display = 'none';
+    }
+
+
+    //set account data
     document.getElementById('account-name').innerHTML = account_data[0];
     document.getElementById('nickname').setAttribute('placeholder', account_data[0])
     document.getElementById('name').setAttribute('placeholder', account_data[4])
     document.getElementById('surname').setAttribute('placeholder', account_data[5])
     document.getElementById('bio').setAttribute('placeholder', account_data[2])
-    if (account_data[3] != '.') {
+    if (account_data[3] != '.' && account_data[3] != '') {
         document.getElementById('account-img1').setAttribute('src', account_data[3])
         document.getElementById('account-img2').setAttribute('src', account_data[3])
+    } else {
+        document.getElementById('account-img1').setAttribute('src', 'assets/icons/user.png')
+        document.getElementById('account-img2').setAttribute('src', 'assets/icons/user.png')
     }
 
     //show posts
