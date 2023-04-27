@@ -121,3 +121,7 @@ function decodeDate(n) {
     let temp = new Date(n * 1000);
     return temp.toLocaleDateString();
 }
+
+function CloseBox(){
+    
+}

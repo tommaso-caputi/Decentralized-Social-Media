@@ -279,3 +279,21 @@ body {
     width: 24px;
     height: auto;
 }
+
+.closeBtn{
+    background-color: transparent;
+    border: none;
+    float: right;
+    height: 36px;
+    width: max-content;
+    font-size: larger;
+    color: white;
+    cursor: pointer;
+    margin-right: 0;
+    padding: 5px;
+}
+
+.closeBtnImg{
+    width: 24px;
+    height: auto;
+}

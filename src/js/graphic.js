@@ -1,19 +1,42 @@
-var i = 0;
+var open = true;
+
+//showing the accountbox and closing it clicking on the account button
 
 function showAccountBox() {
 
-    if (i == 0) {
+    if (open == true) {
         var accountbox = document.getElementById("accountbox");
         var container = document.getElementById("container");
         accountbox.style.display = "block";
         container.classList.add("blur");
-        i = 1;
+        open = false;
     } else {
         var accountbox = document.getElementById("accountbox");
         var container = document.getElementById("container");
         accountbox.style.display = "none";
         container.classList.remove("blur");
-        i = 0;
+        open = true;
     }
 
 }
+
+//close the accountbox clicking the x button
+
+function closeBox() {
+    var accountbox = document.getElementById("accountbox");
+    accountbox.style.display = "none";
+    var container = document.getElementById("container");
+    container.classList.remove("blur");
+}
+
+//close the accountbox clicking outside of the accountbox
+
+window.addEventListener('mouseup',function(event){
+    var box = document.getElementById('accountbox');
+    var container = document.getElementById("container");
+    if(event.target != box && event.target.parentNode != box){
+        box.style.display = 'none';
+        container.classList.remove("blur");
+        open = true;
+    }
+});  
