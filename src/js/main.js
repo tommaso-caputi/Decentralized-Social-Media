@@ -99,6 +99,23 @@ const addLike = async (n) => {
     await window.contract.addLike(n)
 }
 
+const updateAccountORRegistation = async () => {
+    account_data = await contract.getAccount(accounts[0]);
+    if (account_data[0] == '') {
+        //registrazione
+        console.log(await window.contract.createAccount(
+            document.getElementById('nickname').value,
+            document.getElementById('bio').value,
+            '.',
+            document.getElementById('name').value,
+            document.getElementById('surname').value
+        ))
+    } else {
+        //update
+        console.log('update')
+    }
+}
+
 function decodeDate(n) {
     let temp = new Date(n * 1000);
     return temp.toLocaleDateString();
