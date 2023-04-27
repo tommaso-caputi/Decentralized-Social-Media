@@ -11,8 +11,6 @@ body {
     border-bottom: 1px solid #d9ed92;
     padding: 10px;
     display: flex;
-    gap: auto;
-    align-items: center;
 }
 
 .container {
@@ -25,46 +23,6 @@ body {
     font-family: 'Poppins', sans-serif;
     color: #d9ed92;
 }
-
-.searchBar {
-    display: inline-flex;
-    width: auto;
-    height: auto;
-    margin: auto;
-    margin-right: 20px;
-}
-
-.input {
-    width: auto;
-    height: max-content;
-    font-size: larger;
-    border: 1px solid white;
-    border-radius: 12px;
-    background-color: transparent;
-    color: white;
-    padding: 5px;
-    margin-right: 5px;
-}
-
-.searchBtn {
-    height: 36px;
-    width: max-content;
-    font-size: larger;
-    border: 1px solid white;
-    border-radius: 12px;
-    background-color: transparent;
-    color: white;
-    cursor: pointer;
-}
-
-.iconAccount {
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
-    margin-left: 10px;
-    margin: auto;
-}
-
 
 .post {
     border: 1px solid white;
@@ -227,7 +185,7 @@ body {
     color: white;
     font-size: 24px;
     margin: auto;
-    margin-left: 10px;
+    margin-left: 0;
 }
 
 .accountMiddle {
@@ -280,7 +238,7 @@ body {
     height: auto;
 }
 
-.closeBtn{
+.closeBtn {
     background-color: transparent;
     border: none;
     float: right;
@@ -293,7 +251,138 @@ body {
     padding: 5px;
 }
 
-.closeBtnImg{
+.closeBtnImg {
     width: 24px;
     height: auto;
 }
+
+.headerBtn {
+    width: min-content;
+    height: min-content;
+    margin: auto;
+    display: flex;
+    margin-right: 10px;
+}
+
+.addBtn {
+    border: none;
+    background-color: transparent;
+    height: 36px;
+    width: max-content;
+    font-size: larger;
+    color: white;
+    cursor: pointer;
+    margin-right: 0;
+    padding: 5px;
+}
+
+.addImg {
+    width: 30px;
+    height: 30px;
+}
+
+.accBtn {
+    border: none;
+    background-color: transparent;
+    height: 36px;
+    width: max-content;
+    font-size: larger;
+    color: white;
+    cursor: pointer;
+    margin-right: 0;
+    padding: 5px;
+}
+
+.accImg {
+    width: 30px;
+    height: 30px;
+}
+
+.createPost {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    width: auto;
+    height: auto;
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    border: 1px solid #d9ed92;
+}
+
+.createTitle {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 24px;
+    margin: auto;
+}
+
+.createSubtitle {
+    font-family: 'Poppins', sans-serif;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+}
+
+.createUpload {
+    width: 94%;
+    height: max-content;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+    padding: 10px;
+    border: 2px dashed #d9ed92;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.uploadIcon {
+    width: 36px;
+    height: auto;
+    margin: auto;
+    cursor: pointer;
+}
+
+#file {
+    display: none;
+   }
+
+.createBtnDiv{
+    width: 94%;
+    height: max-content;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+    padding: 10px;  
+    margin-top: 10px;
+}
+
+.createBtn{
+    margin: auto;
+    background-color: transparent;
+    border: none;
+}
+
+.createDescription{
+    width: 94%;
+    height: max-content;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+    padding: 10px;  
+    margin-top: 10px;
+}
+
+.inputDescription{
+    width: 100%;
+    height: 36px;
+    border: 1px solid #d9ed92;
+    background-color: transparent;
+    border-radius: 14px;
+    color: white;
+    padding: 5px;
+}   
