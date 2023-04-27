@@ -28,10 +28,7 @@ window.onload = async () => {
 
     //controllo registrazione
     account_data = await contract.getAccount(accounts[0]);
-    console.log(account_data)
-    if (account_data[0] == '') {
-        console.log('account non esistente');
-    } else {
+    if (account_data[0] != '') {
         document.getElementById('welcome').style.display = 'none';
     }
 
