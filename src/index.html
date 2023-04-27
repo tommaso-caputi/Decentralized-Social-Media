@@ -40,17 +40,17 @@
             </button>
         </div>
         <div class="accountMiddle">
-            <input type="text" id="nickname" class="accountInfo" placeholder="account name">
+            <input type="text" id="nickname" class="accountInfo" placeholder="nickname">
             <input type="text" id="name" class="accountInfo" placeholder="name">
             <input type="text" id="surname" class="accountInfo" placeholder="surname">
-            <input type="text" id="bio" class="accountInfo" placeholder="surname">
+            <input type="text" id="bio" class="accountInfo" placeholder="bio">
         </div>
 
         <span class="accountMessage">
             modifica le tue informazioni e poi clicca sul bottone per la modifica
         </span>
         <div class="accountModify">
-            <button id="search" class="modifyBtn">
+            <button id="search" class="modifyBtn" onclick="updateAccountORRegistation()">
                 <img src="assets/icons/modify.png" alt="modify" class="modifyBtnImg">
             </button>
         </div>
@@ -93,7 +93,7 @@
 
     <div id="container" class="container">
 
-        <div class="welcome">
+        <div class="welcome" id="welcome">
             <div class="titleWelcome">
                 Ciao User,
             </div>
