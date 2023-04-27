@@ -81,7 +81,10 @@ window.onload = async () => {
             //post interaction 
             const post_interaction = document.createElement('div');
             post_interaction.className = 'postInteractions';
-            post_interaction.innerHTML += '<span class="postLike" onclick="addLike(' + i + ')"><img src="assets/icons/likeEmp.png" alt="like icon" class="iconPost"></span>';
+            //check like
+            if (1 == 1) {
+                post_interaction.innerHTML += '<span class="postLike" onclick="addLike(' + i + ')"><img src="assets/icons/likeEmp.png" alt="like icon" class="iconPost"></span>';
+            }
             post_interaction.innerHTML += '<span class="postLikeNumber">' + posts[i].likes.length + '</span>';
             post_interaction.innerHTML += '<span class="postShare"><img src="assets/icons/share.png" alt="share icon" class="iconPost"></span>';
             post_html.appendChild(post_interaction);
@@ -122,6 +125,6 @@ function decodeDate(n) {
     return temp.toLocaleDateString();
 }
 
-function CloseBox(){
-    
+function CloseBox() {
+
 }

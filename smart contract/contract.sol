@@ -19,9 +19,9 @@ contract DSMContract {
         address creator;
     }
 
-    mapping(address => account) public accounts;
+    mapping(address => account) private accounts;
     //mapping(address => string[]) public posts;
-    post[] public posts;
+    post[] private posts;
 
     //functionsfor manage account
 
@@ -68,10 +68,9 @@ contract DSMContract {
 
     //functions for posts
 
-    function createPost(
-        string memory description,
-        string memory _imgIpfs
-    ) public {
+    function createPost(string memory description, string memory _imgIpfs)
+        public
+    {
         address[] memory temp = new address[](0);
         posts.push(
             post(description, _imgIpfs, temp, block.timestamp, msg.sender)
@@ -114,6 +113,16 @@ contract DSMContract {
         if (check) {
             posts[n].likes.push(msg.sender);
         }
+    }
+
+    function checkLike(uint256 n) public view returns (bool) { //return true if there's already a like
+        bool check = false;
+        for (uint256 i = 0; i < posts[n].likes.length; i++) {
+            if (posts[n].likes[i] == msg.sender) {
+                check = true;
+            }
+        }
+        return check;
     }
 
     //---------------------------------------------------------------------------------------------------
