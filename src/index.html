@@ -18,16 +18,14 @@
         <div class="logo">
             <span> DSM </span>
         </div>
-
-        <div class="searchBar">
-            <input type="search" id="" class="input" placeholder="Cerca qui">
-            <button id="search" class="searchBtn">cerca</button>
-        </div>
-        <div class="account">
-            <span class="postAccountImg">
+        <div class="headerBtn">
+            <button class="addBtn">
+                <img src="assets/icons/add.png" alt="aggiungi un post" class="addImg">
+            </button>
+            <button class="accBtn">
                 <img src="assets/icons/user.png" onclick="showAccountBox()" id="account-img1" alt="account icon"
-                    class="iconAccount">
-            </span>
+                    class="accImg">
+            </button>
         </div>
     </div>
 
@@ -54,6 +52,41 @@
         <div class="accountModify">
             <button id="search" class="modifyBtn">
                 <img src="assets/icons/modify.png" alt="modify" class="modifyBtnImg">
+            </button>
+        </div>
+    </div>
+
+    <div id="createPost" class="createPost">
+        <div class="createTitle">
+            New Post
+            <button class="closeBtn" id="closeBtn" onclick="closeBox()">
+                <img src="assets/icons/close.png" alt="chiudi il box account" class="closeBtnImg">
+            </button>
+        </div>
+        <div class="createSubtitle">
+            carica una foto dal pc o crea un post con solo un commento
+        </div>
+        <div class="createUpload">
+            <label for="file">
+                <img src="assets/icons/upload.png" class="uploadIcon">
+            </label>
+            <input type="file" id="file">
+        </div>
+        <div class="createSubtitle">
+            inserici la descrizione
+        </div>
+        <div class="createDescription">
+            <input class="inputDescription" type="text" id="description" required minlength="10" maxlength="250">
+            <div class="createSubtitle">
+                max 250 
+            </div>
+        </div>
+        <div class="createSubtitle">
+            controlla le modifiche e pubblica il post
+        </div>
+        <div class="createBtnDiv">
+            <button class="createBtn">
+                <img src="assets/icons/add.png" alt="aggiungi un post" class="addImg">
             </button>
         </div>
     </div>
