@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root {
-    --card_width: 500px;
-    --row_increment: auto;
-    --card_border_radius: 16px;
-}
-
 body {
     background-color: black;
 }
@@ -22,13 +16,8 @@ body {
 }
 
 .container {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, var(--card_width));
-    grid-auto-rows: var(--row_increment);
-    justify-content: center;
+    column-count: 4;
+    column-gap: 1em;
 }
 
 .logo {
@@ -79,10 +68,12 @@ body {
 
 .post {
     border: 1px solid white;
-    margin: 15px 10px;
     box-sizing: border-box;
     height: max-content;
     padding: 10px;
+    display: inline-block;
+    margin: 0 0 1em;
+    width: 100%;
 }
 
 .postHeader {
@@ -162,10 +153,11 @@ body {
     padding: 10px;
     cursor: default;
     border: 1px solid white;
-    margin: 15px 10px;
     box-sizing: border-box;
     height: max-content;
-    padding: 10px;
+    display: inline-block;
+    margin: 0 0 1em;
+    width: 100%;
 }
 
 .titleWelcome {
