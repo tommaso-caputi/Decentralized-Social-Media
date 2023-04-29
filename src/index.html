@@ -20,7 +20,7 @@
         </div>
         <div class="headerBtn">
             <button class="addBtn">
-                <img src="assets/icons/add.png" alt="aggiungi un post" class="addImg">
+                <img src="assets/icons/add.png" alt="aggiungi un post" class="addImg" onclick="showCreateBox()">
             </button>
             <button class="accBtn">
                 <img src="assets/icons/user.png" onclick="showAccountBox()" id="account-img1" alt="account icon"
@@ -59,7 +59,7 @@
     <div id="createPost" class="createPost">
         <div class="createTitle">
             New Post
-            <button class="closeBtn" id="closeBtn" onclick="closeBox()">
+            <button class="closeBtn" id="closeBtn" onclick="closeBoxPost()">
                 <img src="assets/icons/close.png" alt="chiudi il box account" class="closeBtnImg">
             </button>
         </div>
@@ -108,6 +108,20 @@
                 </button>
             </div>
         </div>
+        <a href="https://github.com/tommaso-caputi/Decentralized-Social-Media">
+            <div class="qrcodeBox" id="qrcodeBox">
+                <div class="titleQr">
+                    Our project.
+                </div>
+                <div class="imageBoxQr">
+                    <img src="assets/images/qr-code.png" alt="qr it hub" class="imageQr">
+                </div>
+                <div class="subtitleQr">
+                    scan me
+                </div>
+            </div>
+    
+        </a>
         <!--
         <div class="post">
             <div class="postHeader">

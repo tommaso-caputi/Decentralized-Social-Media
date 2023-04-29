@@ -1,12 +1,6 @@
 
 window.onload = async () => {
 
-    //inizializzazione di cose per la grafica
-    var accountbox = document.getElementById("accountbox");
-    accountbox.style.display = "none";
-    //--------------------------------------------
-
-
     //cose dello smart contract
 
     //connect to metamask
