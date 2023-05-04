@@ -8,9 +8,9 @@ function showAccountBox() {
     var container = document.getElementById("container");
 
     if (open == true) {
+        closeBoxPost();
         accountbox.style.display = "block";
         container.classList.add("blur");
-        open = false;
     } else {
         accountbox.style.display = "none";
         container.classList.remove("blur");
@@ -49,9 +49,9 @@ function showCreateBox() {
     var container = document.getElementById("container");
 
     if (open1 == true) {
+        closeBox();
         createPost.style.display = "block";
         container.classList.add("blur");
-        open1 = false;
     } else {
         createPost.style.display = "none";
         container.classList.remove("blur");
