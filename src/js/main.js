@@ -48,45 +48,7 @@ window.onload = async () => {
     const posts = await contract.getLastNPosts(Number(n_posts._hex));
 
     for (let i = 0; i < posts.length; i++) {
-        var post_creator = await contract.getAccount(posts[i].creator);
-        const post_html = document.createElement('div');
-        post_html.className = 'post';
-        //post header 
-        const post_header = document.createElement('div');
-        post_header.className = 'postHeader';
-        if (post_creator[3] != '.') { post_header.innerHTML += '<span class="postAccountImg"><img src="' + post_creator[3] + '" alt="account icon" class="iconPost"></span>' } else { post_header.innerHTML += '<span class="postAccountImg"><img src="assets/icons/user.png" alt="account icon" class="iconPost"></span>' }
-        post_header.innerHTML += '<span class="postAccountName">' + post_creator[0] + '</span>';
-        post_html.appendChild(post_header);
-        //post image
-        if (posts[i]._imgIpfs != '.') {
-            post_html.innerHTML += '<div class="postImages"><img src="' + posts[i]._imgIpfs + '" alt="Immagine post" class="img"></div>';
-            //post interaction 
-            const post_interaction = document.createElement('div');
-            post_interaction.className = 'postInteractions';
-            post_interaction.innerHTML += '<span class="postL   ike"><img src="assets/icons/likeEmp.png" alt="like icon" class="iconPost"></span>';
-            post_interaction.innerHTML += '<span class="postLikeNumber">' + Number(posts[i].likes._hex) + '</span>';
-            post_interaction.innerHTML += '<span class="postShare"><img src="assets/icons/share.png" alt="share icon" class="iconPost"></span>';
-            post_html.appendChild(post_interaction);
-            //post description 
-            post_html.innerHTML += '<div class="postDescription">' + posts[i].description + '</div>';
-        } else {
-            //post description 
-            post_html.innerHTML += '<div class="postDescription">' + posts[i].description + '</div>';
-            //post interaction 
-            const post_interaction = document.createElement('div');
-            post_interaction.className = 'postInteractions';
-            //check like
-            if (1 == 1) {
-                post_interaction.innerHTML += '<span class="postLike" onclick="addLike(' + i + ')"><img src="assets/icons/likeEmp.png" alt="like icon" class="iconPost"></span>';
-            }
-            post_interaction.innerHTML += '<span class="postLikeNumber">' + posts[i].likes.length + '</span>';
-            post_interaction.innerHTML += '<span class="postShare"><img src="assets/icons/share.png" alt="share icon" class="iconPost"></span>';
-            post_html.appendChild(post_interaction);
-        }
-        //post create date
-        post_html.innerHTML += '<div class="postInfo"><span>' + decodeDate(posts[i].creationDate) + '</span></div>';
-        //add post to list
-        document.getElementById('container').appendChild(post_html);
+        document.getElementById('container').appendChild(await createPostHTMLELEMENT(posts[i], i));
     }
 
 };
@@ -119,6 +81,55 @@ function decodeDate(n) {
     return temp.toLocaleDateString();
 }
 
-function CloseBox() {
 
+const createPostHTMLELEMENT = async (post, i) => {
+    var post_creator = await contract.getAccount(post.creator);
+    const post_html = document.createElement('div');
+    post_html.className = 'post';
+    //post header 
+    const post_header = document.createElement('div');
+    post_header.className = 'postHeader';
+    if (post_creator[3] != '.') { post_header.innerHTML += '<span class="postAccountImg"><img src="' + post_creator[3] + '" alt="account icon" class="iconPost"></span>' } else { post_header.innerHTML += '<span class="postAccountImg"><img src="assets/icons/user.png" alt="account icon" class="iconPost"></span>' }
+    post_header.innerHTML += '<span class="postAccountName">' + post_creator[0] + '</span>';
+    post_html.appendChild(post_header);
+    //post image
+    if (post._imgIpfs != '.') {
+        post_html.innerHTML += '<div class="postImages"><img src="' + post._imgIpfs + '" alt="Immagine post" class="img"></div>';
+        //post interaction 
+        const post_interaction = document.createElement('div');
+        post_interaction.className = 'postInteractions';
+        post_interaction.innerHTML += '<span class="postL   ike"><img src="assets/icons/likeEmp.png" alt="like icon" class="iconPost"></span>';
+        post_interaction.innerHTML += '<span class="postLikeNumber">' + Number(post.likes._hex) + '</span>';
+        post_interaction.innerHTML += '<span class="postShare"><img src="assets/icons/share.png" alt="share icon" class="iconPost"></span>';
+        post_html.appendChild(post_interaction);
+        //post description 
+        post_html.innerHTML += '<div class="postDescription">' + post.description + '</div>';
+    } else {
+        //post description 
+        post_html.innerHTML += '<div class="postDescription">' + post.description + '</div>';
+        //post interaction 
+        const post_interaction = document.createElement('div');
+        post_interaction.className = 'postInteractions';
+        //check like
+        if (1 == 1) {
+            post_interaction.innerHTML += '<span class="postLike" onclick="addLike(' + i + ')"><img src="assets/icons/likeEmp.png" alt="like icon" class="iconPost"></span>';
+        }
+        post_interaction.innerHTML += '<span class="postLikeNumber">' + post.likes.length + '</span>';
+        post_interaction.innerHTML += '<span class="postShare"><img src="assets/icons/share.png" alt="share icon" class="iconPost"></span>';
+        post_html.appendChild(post_interaction);
+    }
+    //post create date
+    post_html.innerHTML += '<div class="postInfo"><span>' + decodeDate(post.creationDate) + '</span></div>';
+    return post_html;
+}
+
+
+const generatePost = () => {
+    let description = document.getElementById('description').value
+    let img = document.getElementById('file').value
+    if (img != '') {
+        //post without image
+    } else {
+        //post with image
+    }
 }
