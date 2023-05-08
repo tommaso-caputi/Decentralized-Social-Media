@@ -124,12 +124,20 @@ const createPostHTMLELEMENT = async (post, i) => {
 }
 
 
-const generatePost = () => {
+const generatePost = async () => {
     let description = document.getElementById('description').value
     let img = document.getElementById('file').value
-    if (img != '') {
+    if (img == '') {
         //post without img
+        //window.contract.createPost(description, '.')
     } else {
         //post with img
+        /* const node = await IPFS.create()
+        const results = node.add(img)
+        for await (const { cid } of results) {
+            console.log(cid.toString())
+        } */
+        //window.contract.createPost(description, img)
     }
+    closeBoxPost()
 }
