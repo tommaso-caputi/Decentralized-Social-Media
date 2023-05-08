@@ -40,12 +40,18 @@
             <div class="registerSubtitle">
                 username
             </div>
-            <input class="registerInput" type="text" id="registerUsername" required minlength="10" maxlength="250">
+            <input class="registerInput" type="text" id="registerUsername" required minlength="10" maxlength="16">
             <br>
             <div class="registerSubtitle">
                 password
             </div>
-            <input class="registerInput" type="text" id="registerPassword" required minlength="10" maxlength="250">
+            <div class="registerPasswordInput">
+                <input class="registerInputPassword" type="password" id="registerPassword" required minlength="10"
+                    maxlength="16">
+                <button class="viewBtn" id="viewPassword">
+                    <img src="assets/icons/view.png" alt="mostra password" class="wiewBtnImg">
+                </button>
+            </div>
         </div>
 
         <div class="registerSubtitleCenter">
@@ -64,7 +70,7 @@
         </div>
         <br>
         <div class="registerSubtitleCenter">
-            or 
+            or
         </div>
         <div class="registerLoginDiv">
             <button class="registerLoginBtn" id="log-in-redirect">login</button>
