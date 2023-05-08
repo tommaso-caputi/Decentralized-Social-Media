@@ -128,8 +128,8 @@ const generatePost = () => {
     let description = document.getElementById('description').value
     let img = document.getElementById('file').value
     if (img != '') {
-        //post without image
+        //post without img
     } else {
-        //post with image
+        //post with img
     }
 }
