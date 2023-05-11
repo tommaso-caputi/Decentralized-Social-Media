@@ -80,4 +80,38 @@ window.addEventListener('mouseup', function (event) {
         container.classList.remove("blur");
         open1 = true;
     }
-});  
+});
+
+//show and hide the password during the signup process 
+
+function showPassRegister() {
+    var passwordInput = document.getElementById('registerPassword');
+    var viewBtnImg = document.querySelector('.viewBtnImg');
+
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        viewBtnImg.src = 'assets/icons/hide.png';
+        viewBtnImg.alt = 'nascondi password';
+    } else {
+        passwordInput.type = 'password';
+        viewBtnImg.src = 'assets/icons/view.png';
+        viewBtnImg.alt = 'mostra password';
+    }
+}
+
+//show and hide the password during the login process 
+
+function showPassLogin() {
+    var passwordInput = document.getElementById('registerPasswordLogin');
+    var viewBtnImg = document.getElementById('viewBtnLogin');
+
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        viewBtnImg.src = 'assets/icons/hide.png';
+        viewBtnImg.alt = 'nascondi password';
+    } else {
+        passwordInput.type = 'password';
+        viewBtnImg.src = 'assets/icons/view.png';
+        viewBtnImg.alt = 'mostra password';
+    }
+}

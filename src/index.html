@@ -29,9 +29,9 @@
         </div>
     </div>
 
-    <div class="registerBox">
+    <div class="registerBox" style="display: none;">
         <div class="registerTitle">
-            Sign Up
+            Sign up
         </div>
         <div class="registerSubtitle">
             Inserisci le credenziali, iscriviti e inizia a pubblicare!
@@ -40,16 +40,16 @@
             <div class="registerSubtitle">
                 username
             </div>
-            <input class="registerInput" type="text" id="registerUsername" required minlength="10" maxlength="16">
+            <input class="registerInput" type="text" id="registerUsername" required minlength="none" maxlength="16">
             <br>
             <div class="registerSubtitle">
                 password
             </div>
-            <div class="registerPasswordInput">
+            <div class="registerPassword">
                 <input class="registerInputPassword" type="password" id="registerPassword" required minlength="10"
                     maxlength="16">
-                <button class="viewBtn" id="viewPassword">
-                    <img src="assets/icons/.png" alt="mostra password" class="viewBtnImg">
+                <button class="viewBtn" id="viewPassword" onclick="showPassRegister()">
+                    <img src="assets/icons/view.png" alt="mostra password" class="viewBtnImg">
                 </button>
             </div>
         </div>
@@ -76,6 +76,47 @@
             <button class="registerLoginBtn" id="log-in-redirect">login</button>
         </div>
     </div>
+
+    <!-- login box -->
+
+    <div class="loginBox" style="display: none;">
+        <div class="loginTitle">
+            Login
+        </div>
+        <div class="loginSubtitle">
+            Inserisci le credenziali, iscriviti e inizia a pubblicare!
+        </div>
+        <div class="loginData">
+            <div class="loginSubtitle">
+                username
+            </div>
+            <input class="registerInput" type="text" id="registerUsername" required minlength="none" maxlength="16">
+            <br>
+            <div class="loginSubtitle">
+                password
+            </div>
+            <div class="registerPassword">
+                <input class="loginInputPassword" type="password" id="registerPasswordLogin" required minlength="10"
+                    maxlength="16">
+                <button class="viewBtn" id="viewPasswordLog" onclick="showPassLogin()">
+                    <img src="assets/icons/view.png" alt="mostra password"  id="viewBtnLogin" class="viewBtnImg">
+                </button>
+            </div>
+        </div>
+
+        <br>
+        <div class="loginBtnDiv">
+            <button class="loginBtn" id="sign-up"> login </button>
+        </div>
+        <br>
+        <div class="loginSubtitleCenter">
+            or
+        </div>
+        <div class="registerLoginDiv">
+            <button class="loginSignUpBtn" id="sign-up-redirect">sign up</button>
+        </div>
+    </div>
+
 
     <div id="accountbox" class="accountbox">
         <div class="accountTop">
